@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Livros Excepcionais Para Leitura</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1> Livros Excepcionais para leitura</h1>
+        <h1>Livros Excepcionais Para Leitura</h1>
         <p>As melhores recomendações de leitura com links diretos para compra!</p>
     </header>
 
     <main>
-        <section class="container-livros">
+        <!-- Container da barra de pesquisa -->
+<div class="container-busca">
+    <input 
+        type="text" 
+        id="barra-pesquisa" 
+        placeholder="Digite o título do livro ou autor..."
+    >
+</div>
+        <!-- AQUI ESTÁ A SUA CAIXA PRINCIPAL DA ESTANTE -->
+        <div class="estante-grid">
             
             <!-- LIVRO 1 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="a-republica">
                 <img src="https://m.media-amazon.com/images/I/61iW5sHVzdL._SY385_.jpg" alt="Capa do Livro 1">
                 <h2>A República (Platão)</h2>
                 <p class="autor">Autor: Platão</p>
@@ -25,8 +35,8 @@
             </article>
 
             <!-- LIVRO 2 -->
-            <article class="card-livro">
-                <img src="https://m.media-amazon.com/images/I/71OMQZA5E7L._SY342_.jpg" alt="Capa do Livro 2">
+            <article class="card-livro" data-id="biblioteca-nietzsche">
+                <img src="https://m.media-amazon.com/images/I/71OMQZA5E7L._SY342_.jpg" alt="Capa do Livro 2">            
                 <h2>Biblioteca Nietzsche - Box com 4 Livros</h2>
                 <p class="autor">Autor: Friedrich Nietzsche</p>
                 <p class="resenha">Uma coleção dos principais trabalhos de Nietzsche, explorando ideias sobre a vontade de poder e a transmutação dos valores.</p>
@@ -34,19 +44,19 @@
             </article>
 
             <!-- LIVRO 3 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="biblioteca-estoica">
                 <img src="https://m.media-amazon.com/images/I/81Jbim+G34L._SY342_.jpg" alt="Capa do Livro 3">
                 <h2>Biblioteca Estoica: Grandes Mestres Volume I - Box com 4 Livros</h2>
                 <p class="autor">Autores: Epicteto, Seneca, Marcus Aurelius</p>
                 <p class="resenha">Uma coleção dos principais trabalhos dos mestres estoicos, explorando ideias sobre a vida virtuosa e a resignação diante das circunstâncias.</p>
                 <a href="https://www.amazon.com.br/Biblioteca-Estoica-Grandes-Mestres-livros/dp/6580921609/ref=asc_df_6580921609?mcid=ed17540f6e5334709064de61d1f1729c&tag=googleshopp00-20&linkCode=df0&hvadid=709884550003&hvpos=&hvnetw=g&hvrand=2375647312807561735&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9074291&hvtargid=pla-1890013746188&psc=1&hvocijid=2375647312807561735-6580921609-&hvexpln=0&language=pt_BR" target="_blank" class="botao-comprar">Comprar na Amazon</a>
-                <a href= "https://www.mercadolivre.com.br/biblioteca-estoica-grandes-mestres-volume-i-box-com-4-livros/p/MLB23821224?pdp_filters=item_id%3AMLB6880661876&from=gshop&matt_tool=65609379&matt_word=&matt_source=google&matt_campaign_id=22090354445&matt_ad_group_id=197094208291&matt_match_type=&matt_network=g&matt_device=c&matt_creative=792396419500&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735125422&matt_product_id=MLB23821224-product&matt_product_partition_id=2470629206579&matt_target_id=pla-2470629206579&cq_src=google_ads&cq_cmp=22090354445&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354445&gbraid=0AAAAAD93qcBzDd-__6mlX66WyqLVBEmJG&gclid=CjwKCAjwmJjSBhB-EiwAkZgxi2PIEuAno8Zv9w8OJNKvMcqUvjNX5L3XeximupH-yK6eZpf6p411oBoC0coQAvD_BwE" target="_blank" class="botao-comprar">Comprar no Mercado Livre</a>
-                <a href= "https://www.magazineluiza.com.br/livro-biblioteca-estoica-grandes-mestres-box-com-4-livros/p/fjc4a6k390/li/lhgr/?&seller_id=leituraestacaobh&utm_source=google&utm_medium=cpc&utm_term=84418&utm_campaign=google_eco_per_ven_pla_lon_sor_3p_bb-br-itm-li-a-0326&utm_content=&partner_id=84418&gclsrc=aw.ds&gad_source=1&gad_campaignid=23595286710&gbraid=0AAAAAD4zZmTIlqlGdPM0auuZSd_HlfyZe&gclid=CjwKCAjwmJjSBhB-EiwAkZgxi9Gsj4WzRPEGAn2q8zv2QS8AprLqyc0IRpOc3wyddcHG3EBnV6G3FhoC1MUQAvD_BwE" target="_blank" class="botao-comprar">Comprar no Magazine Luiza</a>
-                <a href= "https://shopee.com.br/product/482840775/21999382034?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEcgAAAAyMissiW77KC8Ji3ukBSvfBwxVk-2HMzjGxj2hpf_ZHjP0jAoOOY96CCVSR_P4TxWDH92KqRhNW4AF_RJonybVqvzW2p7_6JF8zdfDrxD3_OZ2Sro2JZmdZkuJgWqdYV-hEzV__CVSRAl8kFHu5IQ&gad_source=1&gad_campaignid=23553984694&gbraid=0AAAAACoEtRmYhvku6jVzKhtoHqUFjVU5b&gclid=CjwKCAjwmJjSBhB-EiwAkZgxi4HlF-0a_VPKta6m_RjSQnhoSNy-C1s9UCJQTbsk3T_J2cOcT_moNRoC2mUQAvD_BwE" target="_blank" class="botao-comprar">Comprar na Shopee</a>
+                <a href="https://www.mercadolivre.com.br/biblioteca-estoica-grandes-mestres-volume-i-box-com-4-livros/p/MLB23821224?pdp_filters=item_id%3AMLB6880661876&from=gshop&matt_tool=65609379&matt_word=&matt_source=google&matt_campaign_id=22090354445&matt_ad_group_id=197094208291&matt_match_type=&matt_network=g&matt_device=c&matt_creative=792396419500&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735125422&matt_product_id=MLB23821224-product&matt_product_partition_id=2470629206579&matt_target_id=pla-2470629206579&cq_src=google_ads&cq_cmp=22090354445&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354445&gbraid=0AAAAAD93qcBzDd-__6mlX66WyqLVBEmJG&gclid=CjwKCAjwmJjSBhB-EiwAkZgxi2PIEuAno8Zv9w8OJNKvMcqUvjNX5L3XeximupH-yK6eZpf6p411oBoC0coQAvD_BwE" target="_blank" class="botao-comprar">Comprar no Mercado Livre</a>
+                <a href="https://www.magazineluiza.com.br/livro-biblioteca-estoica-grandes-mestres-box-com-4-livros/p/fjc4a6k390/li/lhgr/?&seller_id=leituraestacaobh&utm_source=google&utm_medium=cpc&utm_term=84418&utm_campaign=google_eco_per_ven_pla_lon_sor_3p_bb-br-itm-li-a-0326&utm_content=&partner_id=84418&gclsrc=aw.ds&gad_source=1&gad_campaignid=23595286710&gbraid=0AAAAAD4zZmTIlqlGdPM0auuZSd_HlfyZe&gclid=CjwKCAjwmJjSBhB-EiwAkZgxi9Gsj4WzRPEGAn2q8zv2QS8AprLqyc0IRpOc3wyddcHG3EBnV6G3FhoC1MUQAvD_BwE" target="_blank" class="botao-comprar">Comprar no Magazine Luiza</a>
+                <a href="https://shopee.com.br/product/482840775/21999382034?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEcgAAAAyMissiW77KC8Ji3ukBSvfBwxVk-2HMzjGxj2hpf_ZHjP0jAoOOY96CCVSR_P4TxWDH92KqRhNW4AF_RJonybVqvzW2p7_6JF8zdfDrxD3_OZ2Sro2JZmdZkuJgWqdYV-hEzV__CVSRAl8kFHu5IQ&gad_source=1&gad_campaignid=23553984694&gbraid=0AAAAACoEtRmYhvku6jVzKhtoHqUFjVU5b&gclid=CjwKCAjwmJjSBhB-EiwAkZgxi4HlF-0a_VPKta6m_RjSQnhoSNy-C1s9UCJQTbsk3T_J2cOcT_moNRoC2mUQAvD_BwE" target="_blank" class="botao-comprar">Comprar na Shopee</a>
             </article>
 
             <!-- LIVRO 4 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="o-livro-da-filosofia">
                 <img src="https://m.media-amazon.com/images/I/81lEztlbffL._SY385_.jpg" alt="Capa do Livro 4">
                 <h2>O livro da filosofia (Globo Livros)</h2>
                 <p class="autor">Autor: Vários autores</p>
@@ -56,9 +66,8 @@
                 <a href="https://www.travessa.com.br/o-livro-da-filosofia/artigo/9be4d685-575a-46d2-bec0-130ed93beda6?pcd=041&srsltid=AfmBOorpWyCZxKgkndzg0N1L09PFPf6AAhmzhJzBW9CZvhELds10Ihl2FaA" target="_blank" class="botao-comprar">Comprar na Livraria Travessa</a>
             </article>
 
-
-            <!-- LIVRO 5 -->
-            <article class="card-livro">
+            <!-- LIVRO 5 -->           
+            <article class="card-livro" data-id="alem-do-bem-e-do-mal">
                 <img src="https://m.media-amazon.com/images/I/51uCGBhGmDL._SY342_.jpg" alt="Capa do Livro 5">
                 <h2>Além do bem e do mal (Friedrich Nietzsche)</h2>
                 <p class="autor">Autor: Friedrich Nietzsche</p>
@@ -68,7 +77,7 @@
             </article>
 
             <!-- LIVRO 6 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="o-mito-da-caverna">
                 <img src="https://m.media-amazon.com/images/I/91hv2cST8ZL._SY385_.jpg" alt="Capa do Livro 6">
                 <h2>O Mito Da Caverna (Platão)</h2>
                 <p class="autor">Autor: Platão</p>
@@ -78,7 +87,7 @@
             </article>
 
             <!-- LIVRO 7 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="sobre-a-brevidade-da-vida">
                 <img src="https://m.media-amazon.com/images/I/71AQ-sSDtNL._SY425_.jpg" alt="Capa do Livro 7">
                 <h2>Sobre a Brevidade da Vida: Edição especial com prefácio de Lúcia Helena Galvão Maya</h2>
                 <p class="autor">Autores: Lúcio Aneu Sêneca e Lúcia Helena Galvão Maya</p>
@@ -88,27 +97,28 @@
                 <a href="https://shopee.com.br/product/482840775/15822420293?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEcgAAAAx55gWqStdC2-FdV5uTeoCF0iS98Nw3X8TdydJfczzDUCdoMoLPLp68roQLxciNOHEaeXLSG3RQhx1En7YdMN5r4yZXIoa7sbvzv7DU5VdqaIIyxoOXRTsXoWJ9jAyFp1-GzizN9pleNL00TuOk_g" target="_blank" class="botao-comprar">Comprar na Shopee</a>
             </article>
 
-            <!-- LIVRO 8 -->
-            <article class="card-livro">
+            <!-- LIVRO 8 -->            
+            <article class="card-livro"data-id="o-deus-de-spinoza" >
                 <img src="https://m.media-amazon.com/images/I/51RYlBXBmeL._SY385_.jpg" alt="Capa do Livro 8">
                 <h2>O Deus De Spinoza </h2>
                 <p class="autor">Autor: Baruch Spinoza</p>
                 <p class="resenha">Esta 3ª edição ampliada oferece uma introdução acessível à filosofia de Spinoza, explorando conceitos como a substância única e a natureza naturada a partir da trajetória pessoal do autor, que passou do protestantismo e agnosticismo para a visão imanente do divino. A obra desvenda o pensamento que cativou Einstein, focando na coerência filosófica e na grandiosidade do cosmos.</p>
                 <a href="https://www.amazon.com.br/Spinoza-F%C3%A1bio-Manuel-Tiene-Santos/dp/6500931238/ref=asc_df_6500931238?mcid=be6f66e28eb6350ebdaf4eed76b536a7&tag=googleshopp00-20&linkCode=df0&hvadid=709883381662&hvpos=&hvnetw=g&hvrand=2375647312807561735&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9074291&hvtargid=pla-2337701261694&psc=1&hvocijid=2375647312807561735-6500931238-&hvexpln=0&language=pt_BR" target="_blank" class="botao-comprar">Comprar na Amazon</a>
             </article>
-
+            
             <!-- LIVRO 9 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="meditacoes-metafisicas">
                 <img src="https://m.media-amazon.com/images/I/616R9G2T72L._SY425_.jpg" alt="Capa do Livro 9">
                 <h2>Meditações Metafísicas (Descartes)</h2>
                 <p class="autor">Autor: René Descartes</p>
-                <p class="resenha">Composta por seis meditações de caráter filosófico, a presente obra desmonta e reconstrói a ideia do eu individual ao reunir argumentos sobre a existência de Deus e a dualidade entre alma e corpo.</p>
+                <p class="resenha">Composta por seis meditações de caráter filosófico, a presente obra desmonta e reconstrói a ideia do eu individual ao reunir argumentos sobre a existence de Deus e a dualidade entre alma e corpo.</p>
                 <a href="https://www.amazon.com.br/Medita%C3%A7%C3%B5es-Metaf%C3%ADsicas-Descartes/dp/8572839534?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1ZZFT5FULY4LN" target="_blank" class="botao-comprar">Comprar na Amazon</a>
                 <a href="https://www.mercadolivre.com.br/meditacoes-metafisicas---edipro/up/MLBU1095126726" target="_blank" class="botao-comprar">Comprar no Mercado Livre</a>
                 <a href="https://shopee.com.br/product/534108724/22397606356?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEcgAAAAwpLY3eXXS4LSDZ9-UJ4D_FmA7dOdGjgf87w7_mM-64tIuW_B2f5Q0xNrt3X8F7ApfITQT2EBS2E_7_IilPMZP0w-L3I7dNpxQAIFb91p3UdEFv2x3Bruf6aRSrKl_XVj45SF8pl6Gv-yyeE7w1bQ" target="_blank" class="botao-comprar">Comprar na Shopee</a>
             </article>
+            
             <!-- LIVRO 10 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="pedagogia-do-oprimido">
                 <img src="https://m.media-amazon.com/images/I/811oKbyTXNL._SY425_.jpg" alt="Capa do Livro 10">
                 <h2>Pedagogia Do Oprimido (Paulo Freire)</h2>
                 <p class="autor">Autor: Paulo Freire</p>
@@ -117,16 +127,18 @@
                 <a href="https://www.mercadolivre.com.br/pedagogia-do-oprimido--nova-edicao--freire-paulo/up/MLBU1128172514" target="_blank" class="botao-comprar">Comprar no Mercado Livre</a>
                 <a href="https://shopee.com.br/Livro-Pedagogia-do-Oprimido-Paulo-Freire-(Novo-)-i.329772945.6085502903" target="_blank" class="botao-comprar">Comprar na Shopee</a>
             </article>
-            <!-- LIVRO 11 -->
-            <article class="card-livro">
+            
+            <!-- LIVRO 11 -->            
+            <article class="card-livro" data-id="a-natureza-do-espaco">
                 <img src="https://m.media-amazon.com/images/I/61X1pWxv4QL._SY425_.jpg" alt="Capa do Livro 11">
                 <h2>A Natureza do Espaço: Técnica e Tempo, Razão e Emoção</h2>
                 <p class="autor">Autor: Milton Santos </p>
                 <p class="resenha">O livro A Natureza do Espaço: Técnica e Tempo, Razão e Emoção é uma obra fundamental de Milton Santos, o espaço geográfico é a união indissociável entre a forma material (sistema de objetos) e as dinâmicas sociais (sistema de ações). Integrando técnica, tempo e globalização, a obra de Milton Santos continua sendo leitura essencial para compreender a realidade urbana contemporânea e o território</p>
                 <a href="https://www.amazon.com.br/Natureza-Espa%C3%A7o-T%C3%A9cnica-Tempo-Emo%C3%A7%C3%A3o/dp/8531407133" target="_blank" class="botao-comprar">Comprar na Amazon</a>
             </article>
+            
             <!-- LIVRO 12 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="pequeno-manual-antirracista">
                 <img src="https://m.media-amazon.com/images/I/71D3cAdm0GL._SY385_.jpg" alt="Capa do Livro 12">
                 <h2>Pequeno Manual Antirracista (Djamila Ribeiro)</h2>
                 <p class="autor">Autor: Djamila Ribeiro </p>
@@ -138,8 +150,9 @@
                 <a href="https://www.magazineluiza.com.br/livro-pequeno-manual-antirracista-djamila-ribeiro/p/224748200/li/lira/?seller_id=magazineluiza&srsltid=AfmBOoqf3s1pFguiXJ1bang8PvmiWUbUuI0p-axl3kzFq-qTkYUYynBskYo" target="_blank" class="botao-comprar">Comprar na Magalu</a>
                 <a href="https://shopee.com.br/product/389320454/5480111270?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEcAAAAAzEXEQN59avJ2Ll1ian6j_Y2BTnkuClj4Ew5LhGFOBJKU_tGot6yPMeuWIyuAyRzJpdmhgl3YUbbqhaas3GRh8euSE2R8B5hMQSQUdyEr_yZVAT1YlzPmzQgRha3oDT6xxkWPOx5F4YrtSLhRY" target="_blank" class="botao-comprar">Comprar na Shopee</a>
             </article>
+            
             <!-- LIVRO 13 -->
-            <article class="card-livro">
+            <article class="card-livro" data-id="por-que-fazemos-o-que-fazemos">
                 <img src="https://m.media-amazon.com/images/I/51jBrql3omL._SY445_SX342_ML2_.jpg" alt="Capa do Livro 13">
                 <h2>Por Que Fazemos O Que Fazemos? (Mário Sergio Cortella)</h2>
                 <p class="autor">Autor: Mário Sergio Cortella</p>
@@ -147,8 +160,9 @@
                 <a href="https://www.amazon.com.br/Por-que-Fazemos/dp/8542207416/ref=asc_df_8542207416?mcid=3db250e65f503c768d3373699165853b&tag=googleshopp00-20&linkCode=df0&hvadid=709883381704&hvpos=&hvnetw=g&hvrand=17611821825816312976&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9074291&hvtargid=pla-334739918098&psc=1&hvocijid=17611821825816312976-8542207416-&hvexpln=0&language=pt_BR" target="_blank" class="botao-comprar">Comprar na Amazon</a>
                 <a href="https://www.mercadolivre.com.br/libro-por-que-fazemos-o-que-fazemos-de-cortella-mario-sergio-editorial-editora-planeta-do-brasil-ltda-tapa-mole-en-portugus-2016/p/MLB19297920?pdp_filters=item_id%3AMLB5205462334&from=gshop&matt_tool=65609379&matt_word=&matt_source=google&matt_campaign_id=22090354445&matt_ad_group_id=197094208291&matt_match_type=&matt_network=g&matt_device=c&matt_creative=792396419500&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128761&matt_product_id=MLB19297920-product&matt_product_partition_id=2470629206779&matt_target_id=pla-2470629206779&cq_src=google_ads&cq_cmp=22090354445&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=22090354445&gbraid=0AAAAAD93qcCFm8sipjNa8CNwFDRDdJ-cw&gclid=CjwKCAjwu53SBhAhEiwAJzSLNjyQNbjEdmN2U_0XoLiSq2ftvL7hwTi8wupgMpQr-TdnbRvYV-nkABoCS_kQAvD_BwE" target="_blank" class="botao-comprar">Comprar no Mercado Livre</a>
             </article>
-            <!-- LIVRO 14 -->
-            <article class="card-livro">
+            
+            <!-- LIVRO 14 -->            
+            <article class="card-livro" data-id="o-dilema-do-porco-espinho">
                 <img src="https://m.media-amazon.com/images/I/91U5O+lJzcL._SY425_.jpg" alt="Capa do Livro 14">
                 <h2>O Dilema Do Porco-Espinho: Como encarar a solidão</h2>
                 <p class="autor">Autor: Leandro Karnal</p>
@@ -158,21 +172,79 @@
                 <a href="https://www.magazineluiza.com.br/o-dilema-do-porco-espinho-leandro-karnal/p/dkck7kh9k4/li/llit/?&seller_id=livfamiliascrista&utm_source=google&utm_medium=cpc&utm_term=84419&utm_campaign=google_eco_per_ven_pla_lon_sor_3p_bb-br-itm-li-b-0326&utm_content=&partner_id=84419&gclsrc=aw.ds&gad_source=1&gad_campaignid=23604909733&gbraid=0AAAAAD4zZmRUzckw_fnvx6ceBLUU-LyQV&gclid=CjwKCAjwu53SBhAhEiwAJzSLNme4mzhRfyDEJSXRJJVg3C6e4Dw4ZhZPfoQxOkUJrNsO-LyatUWoLhoC_CMQAvD_BwE" target="_blank" class="botao-comprar">Comprar na Magalu</a>
             </article>
 
-        </section>
+            <!-- LIVRO 15 -->
+            <article class="card-livro" data-id="o-principe">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_947676-MLU50455021197_062022-O.webp" alt="Capa do Livro 15">
+                <h2>O Príncipe</h2>
+                <p class="autor">Autor: Nicolau Maquiavel</p>
+                <p class="resenha"> O príncipe, escrito em 1513, demonstra como um governante deve agir seja com o exército, com os seus ministros ou com o povo para manter o poder e a ordem do Estado mesmo que para isso se comporte de modo cruel ou imoral.</p>
+                <a href="https://www.amazon.com.br/pr%C3%ADncipe-Nicolau-Maquiavel/dp/6555525509/ref=asc_df_6555525509?mcid=83802403a2ce3e4c8c284e501ca52e47&tag=googleshopp00-20&linkCode=df0&hvadid=709857900213&hvpos=&hvnetw=g&hvrand=12452361061983250759&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9074291&hvtargid=pla-1622027445749&psc=1&hvocijid=12452361061983250759-6555525509-&hvexpln=0&language=pt_BR" target="_blank" class="botao-comprar">Comprar na Amazon</a>
+                <a href="https://www.mercadolivre.com.br/livro-fisico-o-principe-nicolau-maquiavel-texto-integral/up/MLBU1423399310" target="_blank" class="botao-comprar">Comprar no Mercado Livre</a>
+                <a href="https://shopee.com.br/product/656490354/16917920992?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEcgAAAAzOL21T5YVYRZdapZu9CyFnLG7xfA7rohWJCldnQ4T2oHEQJiNeZHBgGcKZKk-bxAetYzuTHlY67aNW5bhQaTPTDNfY2ro4aJEIeNqK10VCJliQLt3ZdHA1LrSseVh3vbyz6b6ZMTmYfb0LLjS-LA" target="_blank" class="botao-comprar">Comprar na Shopee</a>
+            </article>
+
+        </div> <!-- FIM DA SUA CAIXA PRINCIPAL DA ESTANTE -->
+
+        <!-- SEÇÃO DA NEWSLETTER -->
         <section id="newsletter">
-    <h2>Seja avisado de novos lançamentos dentro do site!</h2>
-    <p>Cadastre seu e-mail e receba uma notificação assim que um livro novo chegar no site.</p>
-    
-    <!-- O formulário começa aqui -->
-    <form action="https://formspree.io/f/xojoyeey" method="POST">
-    <input type="hidden" name="_next" value="https://github.com/dkblackbird/Projeto-Primeiro-Site-Feito-por-min-/obrigado.html">
-    
-    <input type="email" name="email" placeholder="Digite seu e-mail" required>
-    <button type="submit">Quero receber novidades</button>
-</form>
-</section>
+            <h2>Seja avisado de novos lançamentos dentro do site!</h2>
+            <p>Cadastre seu e-mail e receba uma notificação assim que um livro novo chegar no site.</p>
+            
+            <form id="formulario-newsletter" action="https://formspree.io/f/xojoyeey" method="POST">
+                <input type="email" name="email" placeholder="Digite seu e-mail" required>
+                <button type="submit">Quero receber novidades</button>
+            </form>
+        </section>
+
     </main>
 
     <footer>
         <p>&copy; Copyright 2026 - Todos os direitos reservados - Livros Excepcionais para leitura</p>
     </footer>
+
+    <!-- INTERCEPTADOR DO FORMSPREE VIA JS -->
+    <script>
+        const formulario = document.getElementById('formulario-newsletter');
+        
+        formulario.addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+            
+            const dados = new FormData(formulario);
+            
+            const resposta = await fetch(formulario.action, {
+                method: formulario.method,
+                body: dados,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (resposta.ok) {
+                window.location.href = "obrigado.html";
+            } else {
+                alert('Ops! Ocorreu um erro ao tentar cadastrar seu e-mail. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+<!-- ================= INÍCIO DA JANELA MODAL ================= -->
+<div id="modal-livro" class="modal-oculto">
+    <div class="modal-conteudo">
+        <!-- Botão de fechar (o Xzinho) -->
+        <span id="fechar-modal" class="botao-fechar">&times;</span>
+        
+        <!-- Informações do livro que o JS vai preencher -->
+        <h2 id="modal-titulo"></h2>
+        <p id="modal-autor" class="autor-estilo"></p>
+        
+        <div class="modal-corpo">
+            <img id="modal-capa" src="" alt="Capa do Livro">
+            <p id="modal-resumo"></p>
+        </div>
+        
+<div id="modal-botoes-compra" class="container-botoes"></div>
+    </div>
+</div>
+<script src="scripts.js"></script>
+
+</html>

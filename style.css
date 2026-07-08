@@ -1,0 +1,138 @@
+/* Deixa o fundo do site escuro */
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Configura a estante para ser uma grade inteligente */
+.estante-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CORRIGIDO: Mudou para .card-livro para funcionar com seu HTML */
+.card-livro img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease;
+}
+
+/* CORRIGIDO: Adicionada a chave } que estava faltando aqui */
+.card-livro img:hover {
+    transform: scale(1.05);
+}
+
+/* ===================================================
+    BARRA DE PESQUISA (Estilo Dark Moderno)
+   =================================================== */
+.container-busca {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto 10px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+#barra-pesquisa {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #2d2d2d;
+    border: 2px solid #3a3b3c;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#barra-pesquisa:focus {
+    border-color: #555555;
+    background-color: #333333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+#barra-pesquisa::placeholder {
+    color: #888888;
+}
+
+/* ===================================================
+   MODAL (Janela flutuante corrigida)
+   =================================================== */
+.modal-oculto {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px; 
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.botao-fechar {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-fechar:hover {
+    color: #000;
+}
+
+#modal-capa {
+    max-width: 150px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+
+/* CORRIGIDO: Botões agora empilhados, alinhados e neutros */
+.container-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.botao-comprar {
+    background-color: #3a3b3c; 
+    color: #ffffff;            
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;        
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;        
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: block;            
+}
+
+.botao-comprar:hover {
+    background-color: #242526; 
+}
