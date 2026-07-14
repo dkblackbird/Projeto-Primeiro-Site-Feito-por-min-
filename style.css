@@ -1,20 +1,48 @@
-/* Deixa o fundo do site escuro */
+/* Garante que nenhum elemento ultrapasse o tamanho da tela por causa de padding ou borda */
+* {
+    box-sizing: border-box;
+}
 body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('download.jpg');
+    background-size: 100% auto;       /* Força a largura em 100% e ajusta a altura proporcionalmente */
+    background-position: top center;  /* Alinha a imagem pelo topo */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: #1e1e1e;
     color: #ffffff;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Configura a estante para ser uma grade inteligente */
+/* MODIFICADO: Transformou a grade em um carrossel de rolagem horizontal */
 .estante-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-    gap: 25px;
+    display: flex;            /* Mudou de 'grid' para 'flex' para colocar os livros em linha */
+    overflow-x: auto;         /* Ativa a barra de rolagem horizontal quando os livros passarem da tela */
+    gap: 25px;                /* Mantém o espaçamento entre eles */
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    scroll-behavior: smooth;  /* Deixa o deslize dos livros suave */
 }
 
+/* ADICIONE ISSO: Configuração para os cards dos livros não serem esmagados */
+.card-livro {
+    flex: 0 0 150px;          /* Muito importante: impede que o navegador esmague as capas */
+    cursor: pointer;          /* Mostra a mãozinha do mouse ao passar por cima */
+}
+
+/* Opcional: Melhora a barra de rolagem para ficar mais discreta e elegante */
+.estante-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.estante-grid::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+.estante-grid::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
 /* CORRIGIDO: Mudou para .card-livro para funcionar com seu HTML */
 .card-livro img {
     width: 100%;
@@ -63,7 +91,7 @@ body {
 }
 
 /* ===================================================
-   MODAL (Janela flutuante corrigida)
+    MODAL (Janela flutuante corrigida)
    =================================================== */
 .modal-oculto {
     display: none;
@@ -135,4 +163,164 @@ body {
 
 .botao-comprar:hover {
     background-color: #242526; 
+}
+
+/* Fundo escuro que bloqueia o resto do site */
+.modal-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* A caixinha branca/escura que fica no centro */
+.modal-conteudo {
+    background: #222;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+/* Botão de fechar (X) */
+.botao-fechar {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+}
+.botao-fechar:hover { color: #fff; }
+
+/* Estilo dos botões de compra dentro do modal */
+.btn-compra {
+    display: inline-block;
+    background: #444;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn-compra:hover { background: #666; }
+
+/* --- CONFIGURAÇÕES DO MODAL ESTILO AMAZON --- */
+
+/* Ajusta o tamanho da caixinha do modal para caber as duas colunas lado a lado */
+.modal-conteudo {
+    background-color: #fff;
+    width: 90%;
+    max-width: 850px; /* Um pouco mais largo para dar respiro aos textos */
+    margin: 5% auto;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Container Flexbox que divide o modal em Esquerda e Direita */
+.modal-layout-flex {
+    display: flex;
+    gap: 40px; /* Espaço generoso entre a foto e o texto */
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Coluna da Esquerda (Capa) */
+.modal-col-esquerda {
+    flex: 0 0 220px; /* Define uma largura fixa ideal para a imagem da capa */
+}
+
+.modal-col-esquerda img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* Sombra suave na foto */
+}
+
+/* Coluna da Direita (Textos e Botões) */
+.modal-col-direita {
+    flex: 1; /* Ocupa todo o resto do espaço disponível */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilização dos textos internos seguindo a hierarquia da foto */
+#modal-titulo {
+    font-size: 26px;
+    color: #111;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+#modal-autor {
+    font-size: 15px;
+    color: #565959; /* Tom cinza clássico de subtítulos */
+    margin: 0 0 15px 0;
+}
+
+/* Linha sutil para separar o topo da sinopse */
+.divisor-modal {
+    border: 0;
+    border-top: 1px solid #e7e7e7;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#modal-resumo {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0 0 25px 0;
+}
+
+/* Alinhamento dos botões de compra abaixo do texto */
+#modal-botoes-compra {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap; /* Se tiver muitos links, eles quebram linha bonitinho */
+}
+
+/* --- RESPONSIVIDADE (Para celulares) --- */
+@media (max-width: 650px) {
+    .modal-layout-flex {
+        flex-direction: column; /* No celular, a foto fica em cima e o texto embaixo */
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .modal-col-esquerda {
+        flex: 0 0 160px; /* Capa um pouco menor no celular */
+    }
+    
+    #modal-botoes-compra {
+        justify-content: center;
+    }
+}
+/* ===================================================
+    CORREÇÕES PARA CELULARES (Telas de até 768px)
+   =================================================== */
+@media (max-width: 768px) {
+    body {
+        /* Desativa o efeito 'fixed' no celular para acabar com o zoom gigante */
+        background-attachment: scroll !important; 
+        
+        /* Ajusta o tamanho para cobrir a tela vertical do celular proporcionalmente */
+        background-size: cover !important; 
+        background-position: center center !important;
+    }
+
+    /* Deixa a barra de pesquisa com um tamanho perfeito nas laterais no celular */
+    .container-busca {
+        padding: 0 20px; /* Reduz de 40px para 20px para aproveitar melhor a tela do celular */
+        margin-top: 20px;
+    }
 }

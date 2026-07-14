@@ -1,1 +1,0 @@
-console.log (" Agora ngm para nos em slk ")
